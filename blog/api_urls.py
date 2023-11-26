@@ -1,5 +1,5 @@
 from django.urls import path
-
+from rest_framework.urlpatterns import format_suffix_patterns
 from blog.api_views import post_list, post_detail
 
 urlpatterns = [
