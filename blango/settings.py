@@ -48,6 +48,7 @@ class Dev(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'rest_framework',
+        'rest_framework.authtoken',
         'debug_toolbar',
         'blango_auth',
         'blog',
@@ -180,6 +181,14 @@ class Dev(Configuration):
             "handlers": ["console"],
             "level": "DEBUG",
         },
+    }
+
+    REST_FRAMEWORK = {
+      "DEFAULT_AUTHENTICATION_CLASSES": [
+          "rest_framework.authentication.BasicAuthentication",
+          "rest_framework.authentication.SessionAuthentication",
+          "rest_framework.authentication.TokenAuthentication",
+      ]
     }
 
 
